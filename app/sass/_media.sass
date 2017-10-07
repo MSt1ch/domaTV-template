@@ -1,25 +1,60 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
-
+@media only screen and (max-width : 1350px)
+	.slider-prev
+		display: none
+		left: -35px
+	.slider-next
+		display: none
+		right: -5px	
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/
-
+	.img-wrap
+		text-align: center
+		position: relative
+		background-color: #FFF
+		.img-book
+			position: static
+			transform: translate(0, 0)
+			display: inline-block
+		.img-orange
+			transform: translate(-50%, 20%)	
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
-
+	.left-content
+		padding-left: 40px
+		max-width: 430px
+	.text-slogan
+		span:before
+			display: none	
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
-
-
+	.left-content, .right-content
+		float: none
+		margin: 0 auto
+	.left-content
+		margin-bottom: 30px	
+	.img-book
+		img
+			width: 400px
+	.img-orange
+		img
+			width: 200px		
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/**/
+	.img-book
+		img
+			width: 320px
+	.img-orange
+		img
+			width: 130px	
 
 
 /* Custom, iPhone Retina */

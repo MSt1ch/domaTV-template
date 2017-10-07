@@ -14,7 +14,7 @@ $(function() {
 			infiniteLoop: false,
 			pager: false,
 			slideMargin: 10,
-			slideWidth: 660,
+			slideWidth: 600,
 			minSlides: 2,
 			maxSlides: 2,
 			speed: 800,
