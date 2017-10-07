@@ -58,15 +58,17 @@ body
 
 .clearfix:before,
 .clearfix:after 
-  content: " "
-  display: table
+	content: " "
+	display: table
 
 .clearfix:after 
-  clear: both
+	clear: both
 
 .clearfix 
-  *zoom: 1
+	*zoom: 1
 
+.hidden
+	display: none
 
 
 .top-line
@@ -158,14 +160,15 @@ ul.list-adv
 .right-content__date
 	margin-bottom: 25px
 
-.main-form
+.form-style
 	input
 		width: 100%
-		border: none
+		border: 1px solid transparent
 		border-radius: 5px
 		height: 56px
 		margin-bottom: 18px
 		padding-left: 1rem
+		color: $greyColor
 		&:focus
 			outline-color: $accent
 
@@ -182,6 +185,29 @@ ul.list-adv
 	font-weight: 700
 	&:focus
 			outline: none
+	&:active
+		box-shadow: inset 0 2px 2px rgba(0,0,0,0.2)
+		outline: none
+
+.input-wrap
+	position: relative
+.form-style 
+	.rfield_error 
+		display: block
+		padding: 0px 10px 
+		color: #d8512d
+		z-index: 1
+		position: absolute
+		top: 20px
+		left: auto
+		right: 0
+		visibility: hidden
+
+
+
+.form-style
+	input.rf_error
+		border-color: #d8512d
 		
 .text-slogan
 	text-align: center
@@ -204,6 +230,9 @@ ul.list-adv
 			background: url("../img/arrow.png") no-repeat
 			height: 115px
 			width: 150px
+.slider-wrap
+	margin-bottom: 100px
+	position: relative
 
 .slider
 	margin-bottom: 100px
@@ -245,5 +274,119 @@ ul.list-adv
 .item-text__name
 	font-weight: 700
 	font-size: 1.286rem
+
+
+.bx-wrapper
+	margin-bottom: 0
+	box-shadow: none
+	border: none
+	left: 0
+	background: none
+
+.main-slider-nav
+	display: block
+	//position: absolute
+
+.slider-prev
+	display: inline-block
+	left: -80px
+	top: 50%
+	transform: translateY(-50%)
+	position: absolute
+	.bx-prev
+		display: block
+		width: 40px
+		height: 40px
+		text-align: center
+		color: #3c474c
+		text-decoration: none
+		&:hover, &:active
+			text-decoration: none
+		&:before
+			display: inline-block
+			content: '\f104'
+			font-family: fontawesome
+			font-size: 60px
+			line-height: 40px
+.slider-next
+	position: absolute
+	right: -80px
+	top: 50%
+	transform: translateY(-50%)
+	.bx-next
+		display: inline-block
+		width: 40px
+		height: 40px
+		text-align: center
+		text-decoration: none
+		color: #3c474c
+		&:hover, &:active
+			text-decoration: none
+		
+		&:before
+			vertical-align: top
+			display: inline-block
+			content: '\f105'
+			font-family: fontawesome
+			font-size: 60px
+			line-height: 40px
+
+.popup-wrap
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background-color: rgba(0,0,0,.8)
+	cursor: pointer
+
+.popup
+	cursor: initial
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+	position: absolute
+	height: 200px
+	width: 320px
+	background-color: #ffd200
+	border-radius: 5px
+	padding: 80px 20px 20px
+	text-align: center
+	&__content
+		font-size:  1.429rem
+		font-weight: 700
+		line-height: 1.1
+	&__close
+		line-height: 1.3
+		position: absolute
+		text-align: center
+		right: 0
+		top: 0
+		border: 1px solid  $greyColor
+		border-radius: 0 2px 0 
+		background-color: $greyColor
+		display: inline-block
+		width: 30px
+		height: 30px
+		transition: all .25s ease
+		&:hover
+			cursor: pointer
+			background-color: transparent
+			& .closed-line, & .closed-line:before
+				background-color: $greyColor
+.closed-line
+	height: 1px
+	background-color: $accent
+	width: 80%
+	display: inline-block
+	transform: rotate(-50deg)
+
+.closed-line:before
+	content: ''
+	display: block
+	height: 1px
+	background-color: $accent
+	transform: rotate(100deg)
+	width: 100%
 
 @import "media" // Всегда в конце
