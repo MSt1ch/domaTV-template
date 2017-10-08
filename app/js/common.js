@@ -1,4 +1,5 @@
 $(function() {
+
 	var date = new Date();
 	var month = date.getMonth() + 1;
 	var day = date.getDate()
@@ -15,21 +16,13 @@ $(function() {
 				navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
 		responsive : {
 			0 : {
-				items : 1
-				
+				items : 1	
 			},
 			1200 : {
 				items : 2
-				
 			}
-
 		}
-		
-
 	});
-
-
-
 
 	$('.form_check').each(function(){
 
@@ -38,8 +31,7 @@ $(function() {
 
 		form.find('.rfield').addClass('empty_field').parents('.input-wrap').append('<span class="rfield_error">Заполните это поле</span>');
 		btn.addClass('disabled');
-
-					// Функция проверки полей формы      
+					// проверка полей формы      
 					function checkInput(){
 						
 						form.find('.rfield').each(function(){
@@ -61,18 +53,18 @@ $(function() {
 						});
 					}
 					
-					// Функция подсветки незаполненных полей
+					// подсветка незаполненных полей
 					function lightEmpty(){
 						form.find('.empty_field').addClass('rf_error');
 						form.find('.empty_field').parents('.input-wrap').find('.rfield_error').css({'visibility':'visible'});
 						setTimeout(function(){
 							form.find('.empty_field').removeClass('rf_error');
 							form.find('.empty_field').parents('.input-wrap').find('.rfield_error').css({'visibility':'hidden'});
-						},1000);
+						},1500);
 					}
 					
 					//  Полсекундная проверка
-					setInterval(function(){
+					function checkform(){
 						checkInput();
 						var sizeEmpty = form.find('.empty_field').length;
 						if(sizeEmpty > 0){
@@ -83,20 +75,26 @@ $(function() {
 							}
 						} else {
 							btn.removeClass('disabled')
+							$('.popup-wrap').removeClass('hidden')
 						}
-					},500);
+					}
 					
 					//  Клик по кнопке
 					btn.click(function(){
+						checkform()
 						if($(this).hasClass('disabled')){
 							lightEmpty();
 							return false
 						} else {
-							form.submit();
-							$(".form_check").trigger("reset");
-							$('.popup-wrap').removeClass('hidden')
+							setTimeout(function(){
+						
+						$(".form_check").trigger("reset");
+						},500);
+							
 						}
 					});
+
+					;
 
 					$('.popup__close').on('click', function(){
 						$('.popup-wrap').toggleClass('hidden')
