@@ -2,25 +2,26 @@
 
 /*==========  Desktop First  ==========*/
 @media only screen and (max-width : 1350px)
-	.slider-prev
-		display: none
-		left: -35px
-	.slider-next
-		display: none
-		right: -5px	
+	.slider-wrap
+		padding: 0 50px
+	.owl-prev
+		left: -55px
+	.owl-next
+		right: -45px	
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/
 	.img-wrap
 		text-align: center
 		position: relative
+		padding-bottom: 50px
 		background-color: #FFF
-		.img-book
-			position: static
-			transform: translate(0, 0)
-			display: inline-block
-		.img-orange
-			transform: translate(-50%, 20%)	
+	.img-book
+		position: static
+		transform: translate(0, 0)
+		display: inline-block
+	.img-orange
+		transform: translate(-50%, -10%)	
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -40,21 +41,35 @@
 		margin: 0 auto
 	.left-content
 		margin-bottom: 30px	
+	.slider-item
+		text-align: center	
 	.img-book
 		img
 			width: 400px
+	.slider-item__img
+		float: none	
+		display: inline-block
+	.item-text
+		float: none
+		width: 100%
 	.img-orange
+		transform: translate(-70%, -10%)
 		img
-			width: 200px		
+			width: 200px
+			
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/**/
+	.img-wrap
+		padding-bottom: 30px
 	.img-book
 		img
 			width: 320px
 	.img-orange
+		transform: translate(-70%, -30%)
 		img
-			width: 130px	
+			width: 130px
+
 
 
 /* Custom, iPhone Retina */

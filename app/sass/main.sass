@@ -101,7 +101,8 @@ body
 	position: relative
 	background-color: $accent
 	height: 100%
-	
+
+
 
 .img-book
 	display: inline-block
@@ -184,6 +185,10 @@ ul.list-adv
 	text-transform: uppercase
 	font-size: 1.714rem
 	font-weight: 700
+	background: linear-gradient(to bottom, $buttonColor 0%,$buttonGradient 100%)
+	&:hover
+		cursor: pointer
+		
 	&:focus
 			outline: none
 	&:active
@@ -242,7 +247,7 @@ ul.list-adv
 	vertical-align: top
 	color: #000
 	display: inline-block
-	width: 48%
+	width: 100%
 	margin-right: 1%
 	padding-right: 20px
 	&:last-child
@@ -254,6 +259,8 @@ ul.list-adv
 		height: 174px
 		border-radius: 10px
 		border: 1px solid #d3d3d3
+
+
 
 .item-text
 	float: right
@@ -277,59 +284,47 @@ ul.list-adv
 	font-size: 1.286rem
 
 
-.bx-wrapper
-	margin-bottom: 0
-	box-shadow: none
-	border: none
-	left: 0
-	background: none
+.owl-carousel 
+	.owl-item 
+		img
+			width: auto
 
-.main-slider-nav
+.owl-nav
 	display: block
 
-.slider-prev
+.owl-prev
 	display: inline-block
 	left: -80px
 	top: 50%
 	transform: translateY(-50%)
 	position: absolute
-	.bx-prev
+	i
+		font-size: 60px
 		display: block
 		width: 40px
-		height: 40px
+		height: 60px
 		text-align: center
 		color: #3c474c
 		text-decoration: none
-		&:hover, &:active
-			text-decoration: none
-		&:before
-			display: inline-block
-			content: '\f104'
-			font-family: fontawesome
-			font-size: 60px
-			line-height: 40px
-.slider-next
+		line-height: 60px
+
+.owl-prev.disabled, .owl-next.disabled
+	display: none
+
+.owl-next
 	position: absolute
 	right: -80px
 	top: 50%
 	transform: translateY(-50%)
-	.bx-next
+	i
 		display: inline-block
 		width: 40px
-		height: 40px
+		height: 60px
 		text-align: center
 		text-decoration: none
 		color: #3c474c
-		&:hover, &:active
-			text-decoration: none
-		
-		&:before
-			vertical-align: top
-			display: inline-block
-			content: '\f105'
-			font-family: fontawesome
-			font-size: 60px
-			line-height: 40px
+		font-size: 60px
+		line-height: 60px
 
 .popup-wrap
 	position: fixed

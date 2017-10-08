@@ -8,21 +8,24 @@ $(function() {
 	$('.newdate').append(newdate)
 		
 
-	$(document).ready(function(){
-		$('.slider').bxSlider({
-			moveSlides: 1,
-			infiniteLoop: false,
-			pager: false,
-			slideMargin: 10,
-			slideWidth: 600,
-			minSlides: 2,
-			maxSlides: 2,
-			speed: 800,
-			nextText:'',
-			prevText:'',
-			nextSelector:'.slider-next',
-			prevSelector:'.slider-prev'
-		});
+	$(".slider").owlCarousel({
+		nav: true,
+		dots: false,
+		loop: false,
+				navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		responsive : {
+			0 : {
+				items : 1
+				
+			},
+			1200 : {
+				items : 2
+				
+			}
+
+		}
+		
+
 	});
 
 
